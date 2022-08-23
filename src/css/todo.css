@@ -1,0 +1,96 @@
+.container-drop {
+    display: grid;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min-content minmax(300px, 100%);
+    grid-column-gap: 10px;
+    grid-row-gap: 0px;
+    width: 90%;
+    overflow: hidden;
+    max-width: 2000px;
+    padding: 10px;
+}
+    
+.grid-1 { grid-area: 1 / 1 / 2 / 2; }
+.grid-2 { grid-area: 2 / 1 / 3 / 2; }
+.grid-3 { grid-area: 1 / 2 / 2 / 3; }
+.grid-4 { grid-area: 2 / 2 / 3 / 3; }
+.grid-5 { grid-area: 1 / 3 / 2 / 4; }
+.grid-6 { grid-area: 2 / 3 / 3 / 4; }
+
+.kanban-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 900px;
+    font-family: var(--fonte-montserrat);
+    padding: 15px;
+    color: var(--cor-branco);
+    text-decoration: underline;
+}
+
+.grid {
+    width: 100%;
+    min-height: 400px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background-color: rgba(253, 240, 240, 0.187);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.card {
+    padding: 15px;
+    border-radius: 7px;
+    width: 100%;
+    min-height: 140px;
+    background-color: var(--cor-branco);
+    display: flex;
+    flex-direction: column;
+}
+
+.grid .card:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.card-title {
+    flex: 1;
+    font-size: 20px;
+    font-family: var(--fonte-montserrat);
+    font-weight: 600;
+    line-height: 22px;
+    color: var(--cor-preto);
+}
+
+.card-aux {
+    display: flex;
+    width: 100%;
+    padding-top: 30px;
+    justify-content: space-between;
+}
+
+.uk-dropdown {
+    padding: 5px !important;
+    min-width: 100px !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+}
+
+.uk-open {
+    display: flex !important;
+}
+
+.fa-pen-to-square, .btn-edit {
+    color: var(--cor-azul) !important;
+}
+
+.fa-trash-can, .btn-delete {
+    color: var(--cor-vermelho) !important;
+}
+
+.fa-eye, .btn-view {
+    color: var(--cor-preto) !important;
+}

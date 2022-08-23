@@ -1,0 +1,27 @@
+.uk-modal-dialog {
+    height: min-content;
+}
+
+.context-modal-view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.context-modal-view  > b {
+    flex: 1;
+    border-radius: 60px;
+    height: 13px;
+}
+
+.context-modal-view  span {
+    padding-left: 20px;
+}
+
+.erro-input {
+    display: none;
+    font-size: 12px;
+    font-weight: 600px;
+    font-family: var(--fonte-montserrat);
+    color: rgb(205, 28, 28);
+}

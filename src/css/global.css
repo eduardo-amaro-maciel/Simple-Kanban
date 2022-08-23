@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    /* cores */
+
+    --cor-degrade-azul: linear-gradient(to right, #1ea895, #00a2b2, #0099d2, #008ae9, #1272eb);
+    --cor-degrade-amarelo: linear-gradient(to right, #d8d60a, #e1c000, #e7aa00, #ea9400, #ea7d0b);
+    --cor-degrade-verder: linear-gradient(to right, #0ad835, #00dd58, #00e275, #00e68e, #0beaa4);
+
+    --cor-azul: #03a9f4;
+    --cor-vermelho: #ce2f2f;
+    --cor-branco: #f6f6f6;
+    --cor-cinza: #989797;
+    --cor-preto: #1f1f1f;
+
+    /* fontes */
+    --fonte-montserrat: 'Montserrat';
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+*::-webkit-scrollbar-thumb {
+    background-color: var(--cor-branco);
+    border-radius: 60px;
+}
+
+.container {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient( to right bottom, rgba(8, 8, 8, 0.29), rgba(16, 16, 17, 0.29) ),url('../../assets/img/fundo-2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow-y: hidden;
+}

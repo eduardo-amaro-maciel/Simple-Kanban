@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="src/css/global.css">
+    <link rel="stylesheet" href="src/css/menu.css">
+    <link rel="stylesheet" href="src/css/todo.css">
+    <link rel="stylesheet" href="src/css/modal.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.2/dist/css/uikit.min.css" />
+
+    <title>Kanban</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true">
+            <div class="uk-offcanvas-bar">
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolt.</p>
+            </div>
+        </div>
+    
+        <div class="menu-top">
+            <button class="btn-novo-card btn" uk-toggle="target: #modal-new-card">
+                <i class="fa-solid fa-plus"></i>
+                <span>Nova Tarefa</span>
+            </button>
+           <button class="btn-config btn" class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-push">
+                <i class="fa-solid fa-gear"></i>
+           </button>
+        </div>
+
+
+        <!-- Modal -->
+
+        <div id="modal-new-card" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title">Nova Tarefa</h2>
+                
+                <div class="uk-grid-small" uk-grid>
+
+                    <div class="uk-width-1-1">
+                        <label class="uk-form-label">Titulo da tarefa</label>
+                        <input class="uk-input" type="text" id="input-modal-titulo-tarefa">
+                        <span id="erro-titulo" class="erro-input">Este campo deve ser preenchido *</span>
+                    </div>
+
+                    <div class="uk-width-1-1">
+                        <label class="uk-form-label">Descrição da tarefa</label>
+                        <textarea class="uk-textarea" rows="5" id="input-modal-descricao-tarefa"></textarea>
+                        <span id="erro-descricao" class="erro-input">Este campo deve ser preenchido *</span>
+                    </div>
+
+                    <div class="uk-width-1-2@s">
+                        <label class="uk-form-label">Data prevista</label>
+                        <input class="uk-input" type="date" id="input-modal-data-tarefa">
+                        <span id="erro-data" class="erro-input">Este campo deve ser preenchido *</span>
+                    </div>
+
+                    <div class="uk-width-1-2@s">
+                        <label class="uk-form-label">Cor da Tarefa</label>
+                        <input class="uk-input" type="color" id="input-modal-cor-tarefa">
+                        <span id="erro-cor" class="erro-input">Este campo deve ser preenchido *</span>
+                    </div>
+    
+                </div>
+            
+                
+                <p class="uk-text-right">
+                    <button class="uk-button uk-button-default uk-modal-close" type="button" id="modal-cancelar-card">CANCELAR</button>
+                    <button class="uk-button uk-button-primary" type="button" id="modal-salvar-card">SALVAR</button>
+                </p>
+
+            </div>
+        </div>
+
+        <div id="modal-center" class="uk-flex-top" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <h2 class="uk-modal-title" id="modal-titulo-tarefa"></h2>
+                <p id="modal-descricao-tarefa"></p>
+                <div class="context-modal-view">
+                    <b id="modal-cor-tarefa"></b>
+                    <span id="modal-data-tarefa"></span>
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="modal-edit-card" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title">Editar Tarefa</h2>
+                
+                <div class="uk-grid-small" uk-grid>
+
+                    <div class="uk-width-1-1">
+                        <label class="uk-form-label">Titulo da tarefa</label>
+                        <input class="uk-input" type="text" id="edit-modal-titulo-tarefa">
+                        <span id="erro-edit-titulo" class="erro-input">Este campo deve ser preenchido *</span>
+                    </div>
+
+                    <div class="uk-width-1-1">
+                        <label class="uk-form-label">Descrição da tarefa</label>
+                        <textarea class="uk-textarea" rows="5" id="edit-modal-descricao-tarefa"></textarea>
+                        <span id="erro-edit-descricao" class="erro-input">Este campo deve ser preenchido *</span>
+                    </div>
+
+                    <div class="uk-width-1-2@s">
+                        <label class="uk-form-label">Data prevista</label>
+                        <input class="uk-input" type="date" id="edit-modal-data-tarefa">
+                        <span id="erro-edit-data" class="erro-input">Este campo deve ser preenchido *</span>
+                    </div>
+
+                    <div class="uk-width-1-2@s">
+                        <label class="uk-form-label">Cor da Tarefa</label>
+                        <input class="uk-input" type="color" id="edit-modal-cor-tarefa">
+                        <span id="erro-edit-cor" class="erro-input">Este campo deve ser preenchido *</span>
+                    </div>
+    
+                </div>
+            
+                <p class="uk-text-right">
+                    <button class="uk-button uk-button-default" type="button" id="edit-modal-cancelar">CANCELAR</button>
+                    <button class="uk-button uk-button-primary" type="button" id="edit-modal-salvar">SALVAR</button>
+                </p>
+            </div>
+        </div>
+    
+        <div class="container-drop">
+            
+            <div class="kanban-title grid-1">Realizar</div>
+            <div id="realizar" class="grid-2 grid"></div>
+            
+            <div class="kanban-title grid-3">Em Desenvolvimento</div>
+            <div id="em-desenvolvimento" class="grid-4 grid"></div>
+        
+            <div class="kanban-title grid-5">Concluído</div>
+            <div id="concluido" class="grid-6 grid"></div>
+
+        </div>
+    </div>
+
+
+    <!-- UIkit -->
+
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.2/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.2/dist/js/uikit-icons.min.js"></script>
+    
+    <!-- Font Awesome -->
+
+    <script src="https://kit.fontawesome.com/afed8db424.js" crossorigin="anonymous"></script>
+
+    <!-- Alert -->
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Lib -->
+
+    <script src="src/lib/sortable/index.js"></script>
+    <script src="src/lib/drag/index.js"></script>
+
+    <!-- Database -->
+
+    <script src="src/db/index.js"></script>
+
+    <!-- Functions -->
+
+    <script src="src/functions/creatNewCard.js"></script>
+    <script src="src/functions/renderCards.js"></script>
+    <script src="src/functions/cardOptions.js"></script>
+    <script src="src/functions/alert.js"></script>
+    <script src="src/functions/erro-inputs.js"></script>
+    <script src="src/functions/validateInputs.js"></script>
+    
+    <!-- Index -->
+
+    <script src="src/index.js"></script>
+
+</body>
+</html>

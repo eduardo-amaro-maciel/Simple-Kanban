@@ -1,0 +1,52 @@
+.container-menu {
+    height: 15vh;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.menu-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    border-radius: 60px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    padding: 10px 50px;
+    background-color: var(--cor-branco);
+    width: 95%;
+}
+
+.btn-novo-card {
+    padding: 15px;
+    width: 185px;
+    font-size: 22px;
+    color: var(--cor-branco);
+    background-color: var(--cor-azul);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--fonte-montserrat);
+    font-weight: 500;
+    border-radius: 7px;
+}
+
+.btn-config {
+    border: none;
+    background-color: transparent;
+}
+
+.fa-gear {
+    font-size: 40px;
+    color: var(--cor-preto);
+}
+
+.btn {
+    border: none;
+}
+
+.btn:hover {
+    opacity: .8;
+    cursor: pointer;
+}
